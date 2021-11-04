@@ -15,6 +15,7 @@ dist/
 *.sln.docstates
 node_modules
 bower_components
+package-lock.json
 
 # Build results
 
