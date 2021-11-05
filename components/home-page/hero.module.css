@@ -2,8 +2,8 @@
     text-align: center;
     background-image: linear-gradient(
       to bottom,
-      var(--color-grey-900),
-      var(--color-grey-800)
+      var(--color-grey-500),
+      var(--color-grey-900)
     );
     padding: var(--size-8) 0;
   }
@@ -28,6 +28,14 @@
   .hero h1 {
     font-size: var(--size-16);
     margin: var(--size-4) 0;
+    margin-bottom: 0;
+    color: var(--color-grey-300);
+  }
+
+  .hero h2 {
+    font-size: var(--size-8);
+    margin: var(--size-4) 0;
+    margin-top: -10px;
     color: var(--color-grey-300);
   }
   
