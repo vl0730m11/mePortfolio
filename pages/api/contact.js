@@ -23,7 +23,7 @@ async function handler(req, res) {
         };
         console.log(newMessage);
         const { MongoClient } = require('mongodb');
-        const uri = "mongodb+srv://nathan:ixprzyV3yPi3SeGn@cluster0.r1oiz.mongodb.net/mePortfolio?retryWrites=true&w=majority";
+        const uri = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.r1oiz.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
         const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: false });
 
         // try {
