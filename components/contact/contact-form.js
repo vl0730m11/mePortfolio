@@ -47,10 +47,12 @@ function ContactForm() {
         setRequestStatus('pending');
 
         try {
+            let localTime = new Date();
             await sendContactData({
                 email: enteredEmail,
                 name: enteredName,
-                message: enteredMessage
+                message: enteredMessage,
+                createDate: localTime.toLocaleString(undefined, {timeZone: "Australia/Sydney"})
             });
             setRequestStatus('success');
             setEnteredMessage('');

@@ -2,7 +2,7 @@ import { MongoClient } from 'mongodb';
 //Testttttt
 async function handler(req, res) {
     if (req.method === 'POST') {
-        const { email, name, message } = req.body;
+        const { email, name, message, createDate } = req.body;
 
         if (
             !email ||
@@ -20,6 +20,7 @@ async function handler(req, res) {
             email,
             name,
             message,
+            createDate,
         };
         console.log(newMessage);
         const { MongoClient } = require('mongodb');
