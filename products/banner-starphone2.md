@@ -1,9 +1,10 @@
 ---
-title: 'banner-starphone2'
-date: '2022-10-15'
+title: 'starphone2'
+date: '2020-10-15'
 image: banner-starphone2.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Banner'
+excert: Poster of an advertisement campaign
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

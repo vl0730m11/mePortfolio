@@ -35,3 +35,29 @@
   .content p {
     line-height: var(--size-6);
   }
+
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+    background-color: unset;
+    margin-bottom: 0;
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .containerPortfolio {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+.category {
+  position: absolute;
+  top: 15%;
+  right: 0px;
+  background: var(--color-primary-500);
+  opacity: 0.8;
+  padding: 0 5px 0 5px;
+}

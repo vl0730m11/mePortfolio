@@ -1,9 +1,10 @@
 ---
-title: 'poster-iChristmas'
-date: '2022-10-15'
+title: 'iChristmas'
+date: '2013-10-15'
 image: poster-iChristmas.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Poster'
+excert: Poster of a uni event
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

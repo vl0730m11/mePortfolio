@@ -1,9 +1,10 @@
 ---
 title: 'Mousepad-Navi'
-date: '2022-10-15'
+date: '2020-10-15'
 image: Mousepad-Navi.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Mousepad'
+excert: Mousepad with player signatures
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

@@ -1,9 +1,10 @@
 ---
-title: 'banner-VinaWatch1'
+title: 'VinaWatch1'
 date: '2022-10-15'
 image: banner-VinaWatch1.png
-excert: Testing of first post.
-isFeatured: true
+category: 'Banner'
+excert: Poster of an advertisement campaign
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

@@ -1,9 +1,10 @@
 ---
-title: 'logo-VYE'
-date: '2022-10-15'
+title: 'VYE'
+date: '2015-10-15'
 image: logo-VYE.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Logo'
+excert: Logo of a social group
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

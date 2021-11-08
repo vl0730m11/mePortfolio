@@ -1,9 +1,10 @@
 ---
 title: 'Certificate-of-leader-Sample'
-date: '2022-10-15'
+date: '2014-10-15'
 image: Certificate-of-leader-Sample.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Certificate'
+excert: Certificate Sample of a uni event
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

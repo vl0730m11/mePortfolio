@@ -1,9 +1,10 @@
 ---
-title: 'Card-StarryNight'
-date: '2022-10-15'
+title: 'StarryNight'
+date: '2015-10-15'
 image: Card-StarryNight.png
-excert: Testing of first post.
-isFeatured: true
+category: 'Card'
+excert: Card of a uni event
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

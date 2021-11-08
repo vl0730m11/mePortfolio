@@ -1,9 +1,10 @@
 ---
-title: 'logo-VinaWatch'
-date: '2022-10-15'
+title: 'VinaWatch'
+date: '2017-10-15'
 image: logo-VinaWatch.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Logo'
+excert: Logo of a hand-watch retailer
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

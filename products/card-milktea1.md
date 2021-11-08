@@ -1,9 +1,10 @@
 ---
-title: 'card-milktea1'
-date: '2022-10-15'
+title: 'milktea1'
+date: '2017-10-15'
 image: card-milktea1.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Card'
+excert: Card of Gotcha - a Bubble Tea brand 
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

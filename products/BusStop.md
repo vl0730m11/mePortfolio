@@ -1,9 +1,10 @@
 ---
 title: 'BusStop'
-date: '2022-10-15'
+date: '2020-10-15'
 image: BusStop.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Other'
+excert: Project of an advertisement campaign
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

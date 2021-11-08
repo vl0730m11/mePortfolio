@@ -1,9 +1,10 @@
 ---
 title: 'IUIYE-trophy'
-date: '2022-10-15'
+date: '2014-10-15'
 image: IUIYE-trophy.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Other'
+excert: Trophy design of IUIYE contest
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

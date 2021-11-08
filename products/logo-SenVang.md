@@ -1,9 +1,10 @@
 ---
-title: 'logo-SenVang'
-date: '2022-10-15'
+title: 'SenVang'
+date: '2018-10-15'
 image: logo-SenVang.png
-excert: Testing of first post.
-isFeatured: true
+category: 'Logo'
+excert: Logo of an ink-printer firm
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

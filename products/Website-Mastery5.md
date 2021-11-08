@@ -1,9 +1,10 @@
 ---
-title: 'Website-Mastery5'
-date: '2022-10-15'
+title: 'Mastery5'
+date: '2017-10-15'
 image: Website-Mastery5.jpg
-excert: Testing of first post.
-isFeatured: true
+category: 'Website'
+excert: A UI-designed website
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---
