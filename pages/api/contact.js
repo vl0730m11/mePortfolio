@@ -43,6 +43,7 @@ async function handler(req, res) {
 
         async function insert(client) {
             try {
+                console.log("Trying to connect to MongoDB");
                 await client.connect();
                 console.log("MongoDB connected");
                 const database = client.db("mePortfolio");
