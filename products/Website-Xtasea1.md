@@ -1,7 +1,7 @@
 ---
 title: 'Website-Xtasea1'
 date: '2022-10-15'
-image: Website-Xtasea1.jpg
+image: Website-Xtasea1.png
 excert: Testing of first post.
 isFeatured: true
 
@@ -10,4 +10,4 @@ isFeatured: true
 # This is a Title
 This is a standard Content
 
-![Create Routes via your file + folder structure](Website-Xtasea1.jpg)
+![Create Routes via your file + folder structure](Website-Xtasea1.png)

@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown';
 import ProductHeader from './product-header';
 import Image from 'next/image';
 
-import classes from './pproduct-content.module.css';
+import classes from './product-content.module.css';
 
 // const DUMMY_POST = {
 //     slug: 'geting-started3',
@@ -18,7 +18,7 @@ import classes from './pproduct-content.module.css';
 function ProductContent(props) {
   const { product } = props;
 
-  const imagePath = `/images/posts/${post.slug}/${post.image}`;
+  const imagePath = `/images/products/${product.image}`;
 
   const customRenderers = {
     // img(image) {
@@ -40,7 +40,7 @@ function ProductContent(props) {
         return (
           <div className={classes.image}>
             <Image
-              src={`/images/posts/${post.slug}/${image.properties.src}`}
+              src={`/images/product/${image.properties.src}`}
               alt={image.alt}
               width={600}
               height={300}
@@ -55,8 +55,8 @@ function ProductContent(props) {
 
   return (
     <article className={classes.content}>
-      <ProductHeader title={post.title} image={imagePath} />
-      <ReactMarkdown components={customRenderers}>{post.content}</ReactMarkdown>
+      <ProductHeader title={product.title} image={imagePath} />
+      <ReactMarkdown components={customRenderers}>{product.content}</ReactMarkdown>
     </article>
   );
 }

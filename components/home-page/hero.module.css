@@ -40,7 +40,7 @@
   }
   
   .hero p {
-    font-size: var(--size-6);
+    font-size: var(--size-5);
     color: var(--color-grey-200);
     width: 90%;
     max-width: 40rem;
