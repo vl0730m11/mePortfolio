@@ -1,5 +1,22 @@
+import Head from 'next/head';
+import { Fragment } from 'react';
+
+import AllProducts from "../../components/products/all-products";
+import { getAllProducts } from '../../lib/products-util';
+
 function AllProductsPage(props){
-    return;
+    return (
+        <Fragment>
+          <Head>
+            <title>All Products</title>
+            <meta
+              name='description'
+              content='A list of all my projects & artworks'
+            />
+          </Head>
+          <AllProducts products={props.products} />
+        </Fragment>
+      );
 }
 
 export function getStaticProps() {
@@ -7,7 +24,7 @@ export function getStaticProps() {
   
     return {
       props: {
-        posts: allProducts
+        products: allProducts
       },
       revalidate: 60
     }
