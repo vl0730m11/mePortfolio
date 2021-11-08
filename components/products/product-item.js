@@ -11,24 +11,24 @@ function ProductItem(props){
         year: 'numeric'
     });
 
-    const imagePath = `/images/posts/${slug}/${image}`;
-    const linkPath =`/posts/${slug}`;
+    const imagePath = `/images/products/${image}`;
+    const linkPath =`/products/${slug}`;
 
     return (
-        <li className={classes.post}>
+        <div >
             <Link href={linkPath}>
                 <a>
                     <div className={classes.image}>
-                        <Image src={imagePath} alt={title} width="300" height="200" layout="responsive"/>
+                        <img src={imagePath} alt={title} style={{width:'100%'}}/>
                     </div>
-                    <div className={classes.content}>
+                    {/* <div className={classes.content}>
                         <h3>{title}</h3>
                         <time>{formattedDate}</time>
                         <p>{excert}</p>
-                    </div>
+                    </div> */}
                 </a>
             </Link>
-        </li>
+        </div>
     );
 }
 
