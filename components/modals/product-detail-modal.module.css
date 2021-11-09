@@ -1,3 +1,4 @@
+/* mobile screen */
 .modal {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     /* border-radius: 6px; */
@@ -5,13 +6,12 @@
     color: black;
     /* padding: 1rem; */
     vertical-align: middle;
-    width: auto;
-    max-width: 80%;
+    width: 90%;
     height: auto;
     z-index: 10;
     position: fixed;
     top: 10vh;
-    left: calc(10%);
+    left: calc(5%);
     text-align: left;
   }
 
@@ -30,3 +30,37 @@
       color: white;
       font-size: var(--size-3);
   }
+
+@media screen and (min-width: 768px) {
+    .modal {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        /* border-radius: 6px; */
+        background-color: var(--color-primary-500);
+        color: black;
+        /* padding: 1rem; */
+        vertical-align: middle;
+        width: 50%;
+        height: auto;
+        z-index: 10;
+        position: fixed;
+        top: 10vh;
+        left: calc(25%);
+        text-align: left;
+      }
+    
+      .description{
+          background-color: var(--color-grey-800);
+          width: 100%;
+          opacity: 70%;
+          position: absolute;
+          bottom: 0;
+          padding: 1% 5%;
+      }
+    
+      .description > p {
+          margin: 0;
+          margin-bottom: 1%;
+          color: white;
+          font-size: var(--size-3);
+      }
+}

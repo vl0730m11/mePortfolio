@@ -7,7 +7,7 @@
   }
 
   .grid_column{
-    padding-left: 15px; /* gutter size */
+    padding-left: 30px; /* gutter size */
     background-clip: padding-box;
   }
 
