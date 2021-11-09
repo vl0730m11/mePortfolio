@@ -4,8 +4,10 @@
     background-color: var(--color-primary-500);
     color: black;
     /* padding: 1rem; */
-    text-align: center;
-    width: 80%;
+    vertical-align: middle;
+    width: auto;
+    max-width: 80%;
+    height: auto;
     z-index: 10;
     position: fixed;
     top: 10vh;
