@@ -1,6 +1,6 @@
 ---
 title: 'VinaWatch1'
-date: '2022-10-15'
+date: '2016-10-15'
 image: banner-VinaWatch1.png
 category: 'Banner'
 excert: Poster of an advertisement campaign

@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
 
-import FeaturedPosts from '../components/home-page/featured-posts';
+import FeaturedProducts from '../components/home-page/featured-products';
 import Hero from '../components/home-page/hero';
-import { getFeaturedPosts } from '../lib/posts-util';
+import { getFeaturedProducts } from '../lib/products-util';
 
 // const DUMMY_POSTS = [
 //   { 
@@ -54,17 +54,17 @@ function HomePage(props) {
         />
       </Head>
       <Hero />
-      <FeaturedPosts posts={props.posts} />
+      <FeaturedProducts products={props.products} />
     </Fragment>
   );
 }
 
 export function getStaticProps() {
-  const featuredPosts = getFeaturedPosts();
+  const featuredProducts = getFeaturedProducts();
 
   return {
     props: {
-      posts: featuredPosts
+      products: featuredProducts
     },
     revalidate: 60
   }

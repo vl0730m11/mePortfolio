@@ -4,7 +4,7 @@ function Footer(){
     return (
         <footer className={classes.footer}>
             <p>Copyright 2021 @ mePortfolio</p>
-            <p>Powered by NextJs 12.0.2 & React 17.0.2</p>
+            <p>Powered by NextJs 12.0 & React 17.0</p>
         </footer>
     );
 }

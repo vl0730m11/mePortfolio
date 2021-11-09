@@ -1,6 +1,6 @@
 ---
 title: 'VinaWatch'
-date: '2017-10-15'
+date: '2015-10-15'
 image: logo-VinaWatch.jpg
 category: 'Logo'
 excert: Logo of a hand-watch retailer

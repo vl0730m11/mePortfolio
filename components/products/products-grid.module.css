@@ -13,5 +13,4 @@
 
   .grid_column > div { /* change div to reference your elements you put in <Masonry> */
     background: var(--color-grey-800);
-    margin-bottom: 15px;
   }

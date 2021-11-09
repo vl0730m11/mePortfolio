@@ -1,6 +1,6 @@
 ---
 title: 'KurukyWhite'
-date: '2022-10-15'
+date: '2020-10-15'
 image: KurukyWhite.png
 category: 'eSignature'
 excert: online signature

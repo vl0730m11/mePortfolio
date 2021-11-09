@@ -1,6 +1,6 @@
 ---
 title: 'SenVang'
-date: '2018-10-15'
+date: '2017-10-15'
 image: logo-SenVang.png
 category: 'Logo'
 excert: Logo of an ink-printer firm
