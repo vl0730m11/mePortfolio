@@ -2,7 +2,7 @@ import classes from './logo.module.css';
 import Image from 'next/image';
 
 function Logo() {
-    const imagePath = `/images/KurukyWhite.png`;
+    const imagePath = `/images/mePortfolio-logo.png`;
 
     return (
         <div className={classes.image}>
