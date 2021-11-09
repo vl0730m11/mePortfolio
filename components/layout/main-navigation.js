@@ -14,6 +14,8 @@ function MainNavigation() {
                         {/* <Link href="/posts">Posts</Link> */}
                         <Link href="/products">Products</Link>
                         <Link href="/contact">Contact</Link>
+                        <Link href="/profile">Profile</Link>
+                        <Link href="/auth">Login</Link>
                     </li>
                 </ul>
             </nav>

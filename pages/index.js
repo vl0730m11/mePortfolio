@@ -47,7 +47,7 @@ function HomePage(props) {
   return (
     <Fragment>
       <Head>
-        <title>Nathan</title>
+        <title>mePortfolio</title>
         <meta
           name='description'
           content="This is my ePortfolio"
