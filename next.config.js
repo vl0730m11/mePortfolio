@@ -10,6 +10,18 @@ module.exports = (phase) => {
         mongodb_clustername: 'cluster0',
         mongodb_database: 'mePortfolio'
       },
+      webpack: (config, {
+        isServer
+     }) => {
+        if (!isServer) {
+           // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
+           config.resolve.fallback = {
+              fs: false
+           }
+        }
+   
+        return config;
+     }
     });
   }
   return ({
@@ -19,21 +31,33 @@ module.exports = (phase) => {
       mongodb_clustername: 'cluster0',
       mongodb_database: 'mePortfolio'
     },
+    webpack: (config, {
+      isServer
+   }) => {
+      if (!isServer) {
+         // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
+         config.resolve.fallback = {
+            fs: false
+         }
+      }
+ 
+      return config;
+   }
   });
   
 };
 
-module.exports = {
-  webpack: (config, {
-     isServer
-  }) => {
-     if (!isServer) {
-        // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
-        config.resolve.fallback = {
-           fs: false
-        }
-     }
+// module.exports = {
+//   webpack: (config, {
+//      isServer
+//   }) => {
+//      if (!isServer) {
+//         // don't resolve 'fs' module on the client to prevent this error on build --> Error: Can't resolve 'fs'
+//         config.resolve.fallback = {
+//            fs: false
+//         }
+//      }
 
-     return config;
-  }
-}
+//      return config;
+//   }
+// }
