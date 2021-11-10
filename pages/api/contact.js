@@ -67,7 +67,7 @@
 
 // export default handler;
 
-import { connectToDatabase } from '../../../lib/db';
+import { connectToDatabase } from '../../lib/db';
 
 //Testttttt
 async function handler(req, res) {
