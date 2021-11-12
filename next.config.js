@@ -8,7 +8,8 @@ module.exports = (phase) => {
         mongodb_username: 'nathan',
         mongodb_password: 'ixprzyV3yPi3SeGn',
         mongodb_clustername: 'cluster0',
-        mongodb_database: 'mePortfolio'
+        mongodb_database: 'mePortfolio',
+        NEXTAUTH_URL: 'https://me-portfolio-zeta.vercel.app/pages/api/auth'
       },
       webpack: (config, {
         isServer
@@ -29,7 +30,8 @@ module.exports = (phase) => {
       mongodb_username: 'nathan',
       mongodb_password: 'ixprzyV3yPi3SeGn',
       mongodb_clustername: 'cluster0',
-      mongodb_database: 'mePortfolio'
+      mongodb_database: 'mePortfolio',
+      NEXTAUTH_URL: 'https://me-portfolio-zeta.vercel.app/pages/api/auth'
     },
     webpack: (config, {
       isServer
