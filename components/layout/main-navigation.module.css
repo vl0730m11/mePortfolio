@@ -17,6 +17,15 @@
     padding: 0;
   }
   
+  .logoutBtn {
+    margin: 100 var(--size-4);
+    color: white;
+    font-size: var(--size-5);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+  }
+
   .header li {
     margin: 100 var(--size-4);
   }
@@ -26,6 +35,10 @@
     font-size: var(--size-4);
   }
   
+  .logoutBtn:hover {
+    color: var(--color-grey-200);
+  }
+
   .header a:hover,
   .header a:active,
   .header a.active {

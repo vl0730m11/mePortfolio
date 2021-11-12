@@ -7,6 +7,7 @@ function MainNavigation() {
     const [session, loading] = useSession();
 
     function logoutHandler(){
+        //console.log("CLicked!");
         signOut();
     }
 
@@ -25,7 +26,7 @@ function MainNavigation() {
                             {/* <Link href="/profile">Profile</Link>
                         <Link href="/auth">Login</Link> */}
                             {session && <Link href="/profile">Profile</Link>}
-                            {session && <Link href="" onClick={logoutHandler}>Logout</Link>}
+                            {session && <button className={classes.logoutBtn} onClick={logoutHandler}>Logout</button>}
                         </li>
                     </ul>
                 )}
