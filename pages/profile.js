@@ -5,7 +5,7 @@ function ProfilePage() {
   return <UserProfile />;
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const session = await getSession({req: context.req});
 
   if(!session) {
