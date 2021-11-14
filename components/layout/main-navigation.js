@@ -47,7 +47,6 @@ import { useState } from 'react';
 
 function MainNavigation(props) {
     const [session, loading] = useSession();
-    const [isMenuVisible, setMenuVisibility] = useState(false);
 
     function logoutHandler() {
         signOut();
@@ -77,7 +76,7 @@ function MainNavigation(props) {
                                     <Link href="/profile">Profile</Link>
                                 </li>}
                                 {session && <li>
-                                    <Link href="" onClick={logoutHandler}>Logout</Link>
+                                    <button onClick={logoutHandler}>Logout</button>
                                 </li>}
                             </ul>
                         </div>

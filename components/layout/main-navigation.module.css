@@ -89,6 +89,14 @@
     color: white;
     text-decoration: none;
    }
+
+   .toolbar_navigation_items button {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: var(--size-4);
+   }
    
    .toolbar_navigation_items a:hover,
    .toolbar_navigation_items a:active {
