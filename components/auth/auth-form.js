@@ -1,7 +1,11 @@
-import { useState, userRef, useRef } from 'react';
+import { useState, userRef, useRef, useCallback } from 'react';
 import classes from './auth-form.module.css';
 import {signIn} from 'next-auth/client'
 import { useRouter } from 'next/router';
+import { ToastContainer } from "react-toastify";
+import toast from "../ui/toast";
+import "react-toastify/dist/ReactToastify.css";
+import Backdrop from '../modals/backdrop';
 
 async function createUser(email, password) {
   const response = await fetch('/api/auth/signup', {
@@ -28,7 +32,12 @@ function AuthForm() {
 
 
   const [isLogin, setIsLogin] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  const notify = useCallback((type, message) => {
+    toast({ type, message });
+}, []);
 
   function switchAuthModeHandler() {
     setIsLogin((prevState) => !prevState);
@@ -36,6 +45,8 @@ function AuthForm() {
 
   async function submitHandler(event) {
     event.preventDefault();
+    notify("loading", "Validating, Please wait...");
+    setIsLoading(true);
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
@@ -51,16 +62,35 @@ function AuthForm() {
       });
 
       console.log(result);
+      setIsLoading(false);
+      toast.dismiss();
+
       if (!result.error) {
         //set some auth state
+        notify("success", "Logged in!");
         router.replace('/profile');
       }
+
+      notify("error", "Your email or password is incorrect!");
+
     } else {
       try {
         const result = await createUser(enteredEmail, enteredPassword);
         console.log(result);
+        setIsLoading(false);
+        toast.dismiss();
+
+        if (!result.error) {
+          //set some auth state
+          notify("success", "You may now sign in!");
+        }
+        notify("error", "Your email is already registered");
+
       } catch (error) {
         console.log(error);
+        setIsLoading(false);
+        toast.dismiss();
+        notify("error", "Error!");
       }
       
     }
@@ -89,6 +119,21 @@ function AuthForm() {
           </button>
         </div>
       </form>
+
+      <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                //autoClose={false}
+                hideProgressBar={false}
+                newestOnTop={false}
+                draggable={false}
+                pauseOnVisibilityChange
+                closeOnClick
+                pauseOnHover
+                theme="light"
+            />
+
+            {isLoading && <Backdrop />}
     </section>
   );
 }

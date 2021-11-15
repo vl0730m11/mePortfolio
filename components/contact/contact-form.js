@@ -1,6 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import classes from './contact-form.module.css';
-import Notification from '../ui/notification';
+import { ToastContainer } from "react-toastify";
+import toast from "../ui/toast";
+import "react-toastify/dist/ReactToastify.css";
+import Backdrop from '../modals/backdrop';
 
 //install Mongodb  package
 //npm install mongodb
@@ -28,8 +31,12 @@ function ContactForm() {
     const [requestStatus, setRequestStatus] = useState(); //'pending', 'success', 'error'
     const [requestError, setRequestError] = useState();
 
+    const notify = useCallback((type, message) => {
+        toast({ type, message });
+    }, []);
+
     useEffect(() => {
-        if(requestStatus === 'success' || requestStatus === 'error'){
+        if (requestStatus === 'success' || requestStatus === 'error') {
             const timer = setTimeout(() => {
                 setRequestStatus(null);
                 setRequestError(null);
@@ -45,6 +52,7 @@ function ContactForm() {
         //optional add client side validation
 
         setRequestStatus('pending');
+        notify("loading", "Your message is on its way!");
 
         try {
             let localTime = new Date();
@@ -52,39 +60,19 @@ function ContactForm() {
                 email: enteredEmail,
                 name: enteredName,
                 message: enteredMessage,
-                createDate: localTime.toLocaleString(undefined, {timeZone: "Australia/Sydney"})
+                createDate: localTime.toLocaleString(undefined, { timeZone: "Australia/Sydney" })
             });
             setRequestStatus('success');
+            toast.dismiss();
+            notify("success", "Success!");
             setEnteredMessage('');
             setEnteredName('');
             setEnteredEmail('');
         } catch (error) {
             setRequestError(error.message);
             setRequestStatus('error');
-        }
-    }
-
-    let notification;
-
-    if(requestStatus === 'pending'){
-        notification = {
-            status: 'pending',
-            title: 'Sending message...',
-            message: 'Your message is on its way!'
-        }
-    }
-    if(requestStatus === 'success'){
-        notification = {
-            status: 'success',
-            title: 'Success!',
-            message: 'Message sent successfully'
-        }
-    }
-    if(requestStatus === 'error'){
-        notification = {
-            status: 'error',
-            title: 'Error!',
-            message: requestError
+            toast.dismiss();
+            notify("error", "Error!");
         }
     }
 
@@ -110,11 +98,21 @@ function ContactForm() {
                     <button>Send Message</button>
                 </div>
             </form>
-            {notification && <Notification 
-            status={notification.status}
-            title={notification.title}
-            message={notification.message}
-            />}
+
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                //autoClose={false}
+                hideProgressBar={false}
+                newestOnTop={false}
+                draggable={false}
+                pauseOnVisibilityChange
+                closeOnClick
+                pauseOnHover
+                theme="light"
+            />
+
+            {requestStatus === 'pending' && <Backdrop />}
         </section>
     );
 }
