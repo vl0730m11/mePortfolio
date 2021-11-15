@@ -1,55 +1,26 @@
-// import Link from 'next/link';
-// import Logo from './logo';
-// import classes from './main-navigation.module.css';
-// import { useSession, signOut } from 'next-auth/client';
-// import { useState } from 'react';
-
-// function MainNavigation() {
-//     const [session, loading] = useSession();
-//     const [isMenuVisible, setMenuVisibility] = useState(false);
-
-//     function logoutHandler(){
-//         signOut();
-//     }
-
-//     return (
-//         <header className={classes.header}>
-//             <Link href='/'>
-//                 <a><Logo /></a>
-//             </Link>
-//             <nav>
-//                 {!loading && (
-//                     <ul>
-//                         <li>
-//                             {/* <Link href="/posts">Posts</Link> */}
-//                             <Link href="/products">Products</Link>
-//                             <Link href="/contact">Contact</Link>
-//                             {/* <Link href="/profile">Profile</Link>
-//                         <Link href="/auth">Login</Link> */}
-//                             {session && <Link href="/profile">Profile</Link>}
-//                             {session && <Link href="" onClick={logoutHandler}>Logout</Link>}
-//                         </li>
-//                     </ul>
-//                 )}
-//             </nav>
-//         </header>
-//     );
-// }
-
-// export default MainNavigation;
-
 import Link from 'next/link';
 import Logo from './logo';
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton';
 import classes from './main-navigation.module.css';
 import { useSession, signOut } from 'next-auth/client';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { ToastContainer } from "react-toastify";
+import toast from "../ui/toast";
+import "react-toastify/dist/ReactToastify.css";
 
 function MainNavigation(props) {
     const [session, loading] = useSession();
+    const router = useRouter();
+
+    const notify = useCallback((type, message) => {
+        toast({ type, message });
+    }, []);
 
     function logoutHandler() {
         signOut();
+        notify("success", "Successfully Logged out!");
+        router.replace('/');
     }
 
     return (
@@ -81,10 +52,21 @@ function MainNavigation(props) {
                             </ul>
                         </div>
                     </div>
-
-
                 )}
             </nav>
+
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                //autoClose={false}
+                hideProgressBar={false}
+                newestOnTop={false}
+                draggable={false}
+                pauseOnVisibilityChange
+                closeOnClick
+                pauseOnHover
+                theme="light"
+            />
         </header>
     );
 }
