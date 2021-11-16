@@ -3,7 +3,7 @@ import Logo from './logo';
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton';
 import classes from './main-navigation.module.css';
 import { useSession, signOut } from 'next-auth/client';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { ToastContainer } from "react-toastify";
 import toast from "../ui/toast";
@@ -24,50 +24,37 @@ function MainNavigation(props) {
     }
 
     return (
-        <header className={classes.toolbar}>
-            <Link href='/'>
-                <a><Logo /></a>
-            </Link>
-            <nav className={classes.toolbar_navigation}>
-                {!loading && (
-                    <div>
-                        <div className={classes.toolbar_toggle_btn}>
-                            <DrawerToggleButton click={props.drawerClickHandler}/>
+            <header className={classes.toolbar}>
+                <Link href='/'>
+                    <a><Logo /></a>
+                </Link>
+                <nav className={classes.toolbar_navigation}>
+                    {!loading && (
+                        <div>
+                            <div className={classes.toolbar_toggle_btn}>
+                                <DrawerToggleButton click={props.drawerClickHandler} />
+                            </div>
+                            <div className={classes.toolbar_navigation_items}>
+                                <ul>
+                                    <li>
+                                        {/* <Link href="/posts">Posts</Link> */}
+                                        <Link href="/products">Products</Link>
+                                    </li>
+                                    <li>
+                                        <Link href="/contact">Contact</Link>
+                                    </li>
+                                    {session && <li>
+                                        <Link href="/profile">Profile</Link>
+                                    </li>}
+                                    {session && <li>
+                                        <button onClick={logoutHandler}>Logout</button>
+                                    </li>}
+                                </ul>
+                            </div>
                         </div>
-                        <div className={classes.toolbar_navigation_items}>
-                            <ul>
-                                <li>
-                                    {/* <Link href="/posts">Posts</Link> */}
-                                    <Link href="/products">Products</Link>
-                                </li>
-                                <li>
-                                    <Link href="/contact">Contact</Link>
-                                </li>
-                                {session && <li>
-                                    <Link href="/profile">Profile</Link>
-                                </li>}
-                                {session && <li>
-                                    <button onClick={logoutHandler}>Logout</button>
-                                </li>}
-                            </ul>
-                        </div>
-                    </div>
-                )}
-            </nav>
-
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                //autoClose={false}
-                hideProgressBar={false}
-                newestOnTop={false}
-                draggable={false}
-                pauseOnVisibilityChange
-                closeOnClick
-                pauseOnHover
-                theme="light"
-            />
-        </header>
+                    )}
+                </nav>
+            </header>
     );
 }
 

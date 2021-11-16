@@ -99,19 +99,6 @@ function ContactForm() {
                 </div>
             </form>
 
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                //autoClose={false}
-                hideProgressBar={false}
-                newestOnTop={false}
-                draggable={false}
-                pauseOnVisibilityChange
-                closeOnClick
-                pauseOnHover
-                theme="light"
-            />
-
             {requestStatus === 'pending' && <Backdrop />}
         </section>
     );

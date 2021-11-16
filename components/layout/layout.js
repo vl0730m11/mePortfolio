@@ -4,6 +4,7 @@ import Footer from "./footer";
 import SideDrawer from './SideDrawer/SideDrawer';
 import classes from './layout.module.css'
 import Backdrop from '../modals/backdrop';
+import { ToastContainer } from "react-toastify";
 
 function Layout(props) {
     const [sideDrawOpen, setSideDrawOpen] = useState(false);
@@ -23,6 +24,18 @@ function Layout(props) {
         {sideDrawOpen && <Backdrop onCancel={closeProductModal} />}
         <main className={classes.body}>{props.children}</main>
         <Footer/>
+        <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                //autoClose={false}
+                hideProgressBar={false}
+                newestOnTop={false}
+                draggable={false}
+                pauseOnVisibilityChange
+                closeOnClick
+                pauseOnHover
+                theme="light"
+            />
     </Fragment>
     );
 }

@@ -120,7 +120,7 @@ function AuthForm() {
         </div>
       </form>
 
-      <ToastContainer
+      {/* <ToastContainer
                 position="top-right"
                 autoClose={5000}
                 //autoClose={false}
@@ -131,7 +131,7 @@ function AuthForm() {
                 closeOnClick
                 pauseOnHover
                 theme="light"
-            />
+            /> */}
 
             {isLoading && <Backdrop />}
     </section>

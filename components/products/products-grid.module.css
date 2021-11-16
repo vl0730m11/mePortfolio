@@ -1,3 +1,10 @@
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
 .grid {
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
@@ -13,4 +20,16 @@
 
   .grid_column > div { /* change div to reference your elements you put in <Masonry> */
     background: var(--color-grey-800);
+  }
+
+  .load_more_btn {
+    color: var(--color-grey-100);
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: var(--size-5);
+  }
+
+  .load_more_btn:hover {
+    color: var(--color-grey-500);
   }
