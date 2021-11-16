@@ -17,6 +17,9 @@ function SideDrawer(props) {
                     <Link href="/products">Products</Link>
                 </li>
                 <li>
+                    <Link href="/comment">Comments</Link>
+                </li>
+                <li>
                     <Link href="/contact">Contact</Link>
                 </li>
                 {session && <li>
