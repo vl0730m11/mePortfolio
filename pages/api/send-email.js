@@ -22,13 +22,13 @@ async function handler(req, res) {
             //         subject: 'mePortfolio Contact',
             //     }
             // )
-            const message = await client.sendAsync({
+            const result = await client.sendAsync({
                 text: name + ': ' + message + '<br> Email: ' + email,
                 from: process.env.gmail_username,
                 to: process.env.gmail_username,
                 subject: 'mePortfolio Contact',
             });
-            console.log("message: ", message);
+            console.log("result: ", result);
         }
         catch (e) {
             res.status(400).end(JSON.stringify({ message: "Cant send email" }))
