@@ -101,14 +101,17 @@ async function handler(req, res) {
             const db = client.db();
 
             const result = await db.collection('messages').insertOne(newMessage);
+            
+            client.close();
         } catch (error) {
             console.log(error);
+            client.close();
         }
 
         res
             .status(201)
             .json({ message: 'Successfully stored message!', message: newMessage });
-        client.close();
+        
     }
 }
 

@@ -8,28 +8,34 @@ async function handler(req, res) {
             user: process.env.gmail_username,
             password: process.env.gmail_password,
             host: 'smtp.gmail.com',
-            ssl:true
-          });
+            ssl: true
+        });
 
-          try{
+        try {
             console.log("Trying to send Email!");
             console.log("gmail: ", process.env.gmail_username);
-            client.send(
-              {
+            // client.send(
+            //     {
+            //         text: name + ': ' + message + '<br> Email: ' + email,
+            //         from: process.env.gmail_username,
+            //         to: process.env.gmail_username,
+            //         subject: 'mePortfolio Contact',
+            //     }
+            // )
+            const message = await client.sendAsync({
                 text: name + ': ' + message + '<br> Email: ' + email,
                 from: process.env.gmail_username,
                 to: process.env.gmail_username,
                 subject: 'mePortfolio Contact',
-               
-              }
-              )
-            }
-          catch(e){
-            res.status(400).end(JSON.stringify({ message:"Cant send email" }))
+            });
+            console.log("message: ", message);
+        }
+        catch (e) {
+            res.status(400).end(JSON.stringify({ message: "Cant send email" }))
             return;
-          }
-          
-          res.status(200).end(JSON.stringify({ message:'Email sent!' }))  
+        }
+
+        res.status(200).end(JSON.stringify({ message: 'Email sent!' }))
     }
 }
 
