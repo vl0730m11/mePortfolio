@@ -32,6 +32,7 @@ async function handler(req, res) {
         }
         catch (e) {
             res.status(400).end(JSON.stringify({ message: "Cant send email" }))
+            console.log("error: ", e);
             return;
         }
 
