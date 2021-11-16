@@ -17,17 +17,11 @@ function ProductsGrid(props) {
         500: 1
     };
 
-    console.log("products.length: ", products.length);
-    console.log("displayProducts: ", displayProducts);
-
     function loadMoreHandler() {
         if (count < products.length) {
             let moreProducts = products.slice(count, ((count + step > products.length) ? products.length : count + step));
-            console.log("moreProducts: ", moreProducts);
             setDisplayProducts(displayProducts.concat(moreProducts));
             setCount(count + step);
-            console.log("displayProducts: ", displayProducts);
-            console.log("count: ", count);
         }
     }
 

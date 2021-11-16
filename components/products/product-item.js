@@ -41,21 +41,6 @@ function ProductItem(props) {
             
         </div>
     );
-
-    // return (
-    //     <div className={classes.thumbnail}>
-    //         <Link href={linkPath}>
-    //             <a>
-    //                 <div className={classes.image}>
-    //                     <img src={imagePath} alt={title} style={{ width: '100%' }} />
-    //                 </div>
-    //             </a>
-    //         </Link>
-    //         <div className={classes.category}>
-    //             {category}
-    //         </div>
-    //     </div>
-    // );
 }
 
 export default ProductItem;

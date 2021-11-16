@@ -13,8 +13,6 @@ function ProductDetailModal(props) {
         var height = img.height;
         var width = img.width;
         height > width ? setImageIsPortrait(true) : setImageIsPortrait(false);
-        console.log(`HxW ${height}x${width}`);
-        console.log("imageIsPortrait: ", imageIsPortrait);
     }
 
     const formattedDate = new Date(date).toLocaleDateString('en-US', {

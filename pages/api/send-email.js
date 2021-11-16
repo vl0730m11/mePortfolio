@@ -12,16 +12,6 @@ async function handler(req, res) {
         });
 
         try {
-            console.log("Trying to send Email!");
-            console.log("gmail: ", process.env.gmail_username);
-            // client.send(
-            //     {
-            //         text: name + ': ' + message + '<br> Email: ' + email,
-            //         from: process.env.gmail_username,
-            //         to: process.env.gmail_username,
-            //         subject: 'mePortfolio Contact',
-            //     }
-            // )
             const result = await client.sendAsync({
                 text: name + ': ' + message + '<br> Email: ' + email,
                 from: process.env.gmail_username,

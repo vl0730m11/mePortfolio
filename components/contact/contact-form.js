@@ -72,15 +72,15 @@ function ContactForm() {
 
         try {
             let localTime = new Date();
-            
-            await emailContactData({
+
+            await sendContactData({
                 email: enteredEmail,
                 name: enteredName,
                 message: enteredMessage,
                 createDate: localTime.toLocaleString(undefined, { timeZone: "Australia/Sydney" })
             });
 
-            await sendContactData({
+            await emailContactData({
                 email: enteredEmail,
                 name: enteredName,
                 message: enteredMessage,
@@ -89,8 +89,6 @@ function ContactForm() {
             setRequestStatus('success');
             toast.dismiss();
             notify("success", "Success!");
-
-            
 
             setEnteredMessage('');
             setEnteredName('');
