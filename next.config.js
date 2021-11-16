@@ -9,7 +9,9 @@ module.exports = (phase) => {
         mongodb_password: 'ixprzyV3yPi3SeGn',
         mongodb_clustername: 'cluster0',
         mongodb_database: 'mePortfolio',
-        NEXTAUTH_URL: 'https://me-portfolio-zeta.vercel.app'
+        NEXTAUTH_URL: 'https://me-portfolio-zeta.vercel.app',
+        gmail_username: 'pthanhnhan93@gmail.com',
+        gmail_password: 'D3ptr4ig!'
       },
       webpack: (config, {
         isServer
@@ -31,7 +33,9 @@ module.exports = (phase) => {
       mongodb_password: 'ixprzyV3yPi3SeGn',
       mongodb_clustername: 'cluster0',
       mongodb_database: 'mePortfolio',
-      NEXTAUTH_URL: 'https://me-portfolio-zeta.vercel.app'
+      NEXTAUTH_URL: 'https://me-portfolio-zeta.vercel.app',
+      gmail_username: 'pthanhnhan93@gmail.com',
+      gmail_password: 'D3ptr4ig!'
     },
     webpack: (config, {
       isServer

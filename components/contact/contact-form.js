@@ -24,6 +24,22 @@ async function sendContactData(contactDetails) {
     }
 }
 
+async function emailContactData(contactDetails) {
+    const response = await fetch('/api/send-email', {
+        method: 'POST',
+        body: JSON.stringify(contactDetails),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(data.message || 'Something went wrong!');
+    }
+}
+
 function ContactForm() {
     const [enteredEmail, setEnteredEmail] = useState('');
     const [enteredName, setEnteredName] = useState('');
@@ -56,6 +72,14 @@ function ContactForm() {
 
         try {
             let localTime = new Date();
+            
+            await emailContactData({
+                email: enteredEmail,
+                name: enteredName,
+                message: enteredMessage,
+                createDate: localTime.toLocaleString(undefined, { timeZone: "Australia/Sydney" })
+            });
+
             await sendContactData({
                 email: enteredEmail,
                 name: enteredName,
@@ -65,6 +89,9 @@ function ContactForm() {
             setRequestStatus('success');
             toast.dismiss();
             notify("success", "Success!");
+
+            
+
             setEnteredMessage('');
             setEnteredName('');
             setEnteredEmail('');
