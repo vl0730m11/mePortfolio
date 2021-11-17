@@ -1,0 +1,14 @@
+.grid {
+    list-style: none;
+    margin: 0;
+    padding: 0 30%;
+    display: grid;
+    align-content: center;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      padding: 0 10%;
+    }
+  }

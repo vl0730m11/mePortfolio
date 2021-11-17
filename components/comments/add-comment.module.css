@@ -1,0 +1,99 @@
+.container {
+    margin: var(--size-4) auto;
+    padding: 0 30%;
+    
+  }
+
+  .comment {
+    border-radius: 6px;
+    background-color: var(--color-grey-100);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    font-size: var(--size-6);
+    margin: var(--size-6);
+    padding: var(--size-4);
+    height: auto;
+    display: grid;
+  }
+
+  .controls {
+    display: flex;
+    grid-column-gap: 1rem;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .comment label {
+    display: none;
+  }
+
+  .control {
+    margin: 0.5rem 0;
+    flex: 1;
+    min-width: 10rem;
+  }
+
+  .control input,
+  .control textarea {
+    font: inherit;
+    font-size: var(--size-3);
+    color: var(--color-grey-800);
+    padding: var(--size-2);
+    border-radius: 8px;
+    width: 100%;
+    background-color: transparent;
+    border: 0.05rem solid var(--color-primary-500);
+    font-size: var(--size-5);
+  }
+
+  .control input[type="text"],
+  .control textarea[type="text"] {
+    font-size: var(--size-4);
+    padding: 0.5rem;
+  }
+
+  .control input::placeholder,
+  .control textarea::placeholder {
+    font-size: var(--size-4);
+    color: var(--color-primary-500);
+    opacity: 80%;
+  }
+
+  .control input[type="text"]:focus,
+  .control textarea[type="text"]:focus {
+    font-size: var(--size-4);
+    border: none;
+    
+  }
+
+  .container_reply_btn{
+    margin: 0.5rem 1.5rem;
+    margin-right: 0;
+    margin-top: 0;
+    align-content: center;
+    text-align: right;
+  }
+
+  .add_new_btn {
+    display: inline-block;
+    background-color: var(--color-primary-500);
+    font-size: var(--size-4);
+    border-radius: 6px;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    color: white;
+    margin-left: 1rem;
+  }
+
+  .clear_btn {
+    display: inline-block;
+    background: transparent;
+    font-size: var(--size-4);
+    font-weight: bold;
+    border: none;
+    color: var(--color-primary-500);
+  }
+
+.comment button:hover {
+  color: var(--color-primary-200);
+}

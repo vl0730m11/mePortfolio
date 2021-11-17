@@ -10,9 +10,19 @@ function CommentItem(props){
         year: 'numeric'
     });
 
+    function replyHandler(){
+        console.log("id: ", id);
+    }
+
     return (
-        <div>
-            <h6>test</h6>
+        <div className={classes.comment}>
+            <h2>{title}</h2>
+            <h6>{name} - {formattedDate}</h6>
+            <p>{content}</p>
+            <div className={classes.container_reply_btn}>
+                <button onClick={replyHandler}>Reply</button>
+            </div>
+            
         </div>
     );
 }

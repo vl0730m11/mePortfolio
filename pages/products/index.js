@@ -5,7 +5,6 @@ import AllProducts from "../../components/products/all-products";
 import { getAllProducts } from '../../lib/products-util';
 
 function AllProductsPage(props){
-  console.log("props: ", props);
     return (
         <Fragment>
           <Head>

@@ -3,10 +3,9 @@ import CommentItem from './comment-item';
 
 function CommentsGrid(props){
     const { comments } = props;
-    console.log("comments: ", comments);
-
+    
     return (
-        <div>
+        <div className={classes.grid}>
             {comments.map(comment => (
                 <CommentItem key={comment.id} comment={comment} />
             ))}

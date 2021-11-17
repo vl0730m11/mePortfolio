@@ -7,7 +7,7 @@ const DUMMY_COMMENTS = [
         id: 1,
         title: "Title 1",
         name: "Nathan",
-        content: "My first comment",
+        content: "My first comment, My first comment, My first comment, My first comment, My first comment",
         date: '2022-02-10'
     },
     {
@@ -41,7 +41,6 @@ const DUMMY_COMMENTS = [
 ];
 
 function CommentPage(props) {
-    console.log("props: ", props);
 
     return (
         <Fragment>
@@ -59,7 +58,6 @@ function CommentPage(props) {
 
 export function getStaticProps() {
     const allComments = DUMMY_COMMENTS;
-    console.log("allComments: ", allComments);
 
     return {
         props: {
