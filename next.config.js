@@ -37,7 +37,7 @@ module.exports = (phase) => {
       NEXTAUTH_URL: 'https://me-portfolio-zeta.vercel.app',
       gmail_username: 'pthanhnhan93@gmail.com',
       gmail_password: 'obavgdooeloncgdi',
-      url_connection: 'me-portfolio-zeta.vercel.app'
+      url_connection: 'https://me-portfolio-zeta.vercel.app'
     },
     webpack: (config, {
       isServer
