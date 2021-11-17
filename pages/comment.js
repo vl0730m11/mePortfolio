@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import AllComments from "../components/comments/all-comments";
+import { connectToDatabase } from '../lib/db';
+
 
 const DUMMY_COMMENTS = [
     {
@@ -57,24 +59,20 @@ function CommentPage(props) {
 }
 
 export async function getStaticProps() {
-    const response = await fetch(`${process.env.url_connection}/api/comment?action=getAllComments`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    });
+    const client = await connectToDatabase();
+    const db = client.db();
 
-    const data = await response.json();
+    const data = await db.collection('comments').find().toArray();
     console.log("data: ", data);
     // if (!response.ok) {
     //     throw new Error(data.message || 'Something went wronggggg!');
     // }
 
-    const allComments = data.comments;
+    const allComments = [];
 
-    // if (response.ok) {
-    //     allComments = data.comments;
-    // }
+    if (response.ok) {
+        allComments = data;
+    }
 
     return {
         props: {
