@@ -1,8 +1,7 @@
 import { useState, userRef, useRef, useCallback } from 'react';
 import classes from './auth-form.module.css';
-import {signIn} from 'next-auth/client'
+import { signIn } from 'next-auth/client'
 import { useRouter } from 'next/router';
-import { ToastContainer } from "react-toastify";
 import toast from "../ui/toast";
 import "react-toastify/dist/ReactToastify.css";
 import Backdrop from '../modals/backdrop';
@@ -37,7 +36,7 @@ function AuthForm() {
 
   const notify = useCallback((type, message) => {
     toast({ type, message });
-}, []);
+  }, []);
 
   function switchAuthModeHandler() {
     setIsLogin((prevState) => !prevState);
@@ -55,10 +54,10 @@ function AuthForm() {
 
     if (isLogin) {
       //log user in
-      const result = await signIn('credentials', { 
+      const result = await signIn('credentials', {
         redirect: false,
         email: enteredEmail,
-        password: enteredPassword 
+        password: enteredPassword
       });
 
       console.log(result);
@@ -92,7 +91,7 @@ function AuthForm() {
         toast.dismiss();
         notify("error", "Error!");
       }
-      
+
     }
   }
 
@@ -133,7 +132,7 @@ function AuthForm() {
                 theme="light"
             /> */}
 
-            {isLoading && <Backdrop />}
+      {isLoading && <Backdrop />}
     </section>
   );
 }
