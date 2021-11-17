@@ -2,16 +2,17 @@ import {useState} from 'react';
 import classes from './comment-item.module.css'
 
 function CommentItem(props){
-    const { id, title, name, content, date } = props.comment;
+    const { _id, title, name, content, createdDate } = props.comment;
+    console.log("date: ", createdDate);
 
-    const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    const formattedDate = new Date(createdDate).toLocaleDateString('en-US', {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
     });
 
     function replyHandler(){
-        console.log("id: ", id);
+        console.log("_id: ", _id);
     }
 
     return (

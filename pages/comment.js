@@ -57,7 +57,7 @@ function CommentPage(props) {
 }
 
 export async function getStaticProps() {
-    const response = await fetch('http://localhost:3000/api/comment?action=getAllComments', {
+    const response = await fetch(`${process.env.url_connection}/api/comment?action=getAllComments`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -70,11 +70,11 @@ export async function getStaticProps() {
     //     throw new Error(data.message || 'Something went wronggggg!');
     // }
 
-    const allComments = [];
+    const allComments = data.comments;
 
-    if (response.ok) {
-        allComments = data;
-    }
+    // if (response.ok) {
+    //     allComments = data.comments;
+    // }
 
     return {
         props: {

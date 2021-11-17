@@ -45,7 +45,7 @@ function AddComment() {
                 title: enteredTitle,
                 name: enteredName,
                 content: enteredContent,
-                createDate: localTime.toLocaleString(undefined, { timeZone: "Australia/Sydney" })
+                createdDate: localTime.toLocaleString(undefined, { timeZone: "Australia/Sydney" })
             });
 
             toast.dismiss();

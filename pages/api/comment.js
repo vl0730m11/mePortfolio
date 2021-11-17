@@ -23,7 +23,7 @@ async function handler(req, res) {
 }
 
 async function addComment(input, res) {
-    const { action, title, name, content, createDate } = input;
+    const { action, title, name, content, createdDate } = input;
     if (
         !title ||
         !title.trim() === '' ||
@@ -40,7 +40,7 @@ async function addComment(input, res) {
         title,
         name,
         content,
-        createDate,
+        createdDate,
     };
 
     try {
@@ -63,11 +63,12 @@ async function getAllComments(res) {
     try {
         const client = await connectToDatabase();
         const db = client.db();
-        result = await db.collection('comments').find();
+        result = await db.collection('comments').find().toArray();
+        console.log("result: ", result);
         client.close();
     } catch (error) {
         console.log(error);
-        res.status(422).json({ message: 'Something went wrong!' });
+        res.status(422).json({ message: 'Something went wrong!', comments: [] });
         client.close();
     }
 

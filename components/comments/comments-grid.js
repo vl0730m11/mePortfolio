@@ -7,7 +7,7 @@ function CommentsGrid(props){
     return (
         <div className={classes.grid}>
             {comments.map(comment => (
-                <CommentItem key={comment.id} comment={comment} />
+                <CommentItem key={comment._id} comment={comment} />
             ))}
         </div>
     );
