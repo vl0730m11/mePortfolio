@@ -56,8 +56,25 @@ function CommentPage(props) {
     );
 }
 
-export function getStaticProps() {
-    const allComments = DUMMY_COMMENTS;
+export async function getStaticProps() {
+    const response = await fetch('http://localhost:3000/api/comment?action=getAllComments', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+
+    const data = await response.json();
+    console.log("data: ", data);
+    // if (!response.ok) {
+    //     throw new Error(data.message || 'Something went wronggggg!');
+    // }
+
+    const allComments = [];
+
+    if (response.ok) {
+        allComments = data;
+    }
 
     return {
         props: {
