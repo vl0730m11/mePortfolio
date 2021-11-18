@@ -64,15 +64,7 @@ export async function getStaticProps() {
 
     const data = await db.collection('comments').find().toArray();
     console.log("data: ", data);
-    // if (!response.ok) {
-    //     throw new Error(data.message || 'Something went wronggggg!');
-    // }
-
     const allComments = [];
-
-    if (response.ok) {
-        allComments = data;
-    }
 
     return {
         props: {
