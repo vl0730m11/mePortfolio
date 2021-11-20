@@ -1,6 +1,6 @@
 ---
 title: 'HealthyDrinks'
-date: '2021-10-15'
+date: '2020-10-14'
 image: poster-HealthyDrinks.jpg
 category: 'Poster'
 excert: Poster of a uni event

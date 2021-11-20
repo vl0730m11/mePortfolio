@@ -1,6 +1,6 @@
 ---
 title: 'StaffDiscount'
-date: '2021-10-15'
+date: '2019-9-15'
 image: poster-StaffDiscount.jpg
 category: 'Poster'
 excert: Poster of a uni event

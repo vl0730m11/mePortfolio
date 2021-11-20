@@ -1,6 +1,6 @@
 ---
 title: 'GoldenLava'
-date: '2021-10-15'
+date: '2021-10-13'
 image: poster-GoldenLava.jpg
 category: 'Poster'
 excert: Poster of a uni event
