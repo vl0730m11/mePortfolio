@@ -4,7 +4,7 @@ date: '2021-10-15'
 image: poster-CoffeePromotion.jpg
 category: 'Poster'
 excert: Poster of a uni event
-isFeatured: true
+isFeatured: false
 
 # ![Create Routes via your file + folder structure](/images/posts/geting-started/getting-started-nextjs.png)
 ---

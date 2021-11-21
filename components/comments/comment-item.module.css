@@ -43,3 +43,9 @@
   .comment button:hover {
     color: var(--color-primary-200);
   }
+
+  @media (max-width: 768px) {
+    .comment {
+      width: 100%;
+    }
+  }

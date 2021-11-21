@@ -25,12 +25,13 @@
     margin: var(--size-4) auto;
     padding: auto var(--size-4);
     height: auto;
+    white-space:nowrap;
     display: grid;
   }
 
   .add_comment button {
     background-color: var(--color-primary-500);
-    height: 3rem;
+    height: auto;
     font-size: var(--size-4);
     border-radius: 6px;
     color: white;
@@ -40,7 +41,14 @@
   }
   
   @media (min-width: 768px) {
+    
     .comments h1 {
       font-size: var(--size-16);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 10%;
     }
   }
