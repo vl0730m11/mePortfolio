@@ -1,6 +1,6 @@
 ---
 title: 'Mastery1'
-date: '2019-10-15'
+date: '2021-10-10'
 image: Website-Mastery1.jpg
 category: 'Website'
 excert: A UI-designed website

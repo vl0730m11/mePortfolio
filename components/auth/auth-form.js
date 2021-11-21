@@ -70,7 +70,13 @@ function AuthForm() {
         router.replace('/profile');
       }
 
-      notify("error", "Your email or password is incorrect!");
+      if (result.error) {
+        //set some auth state
+        emailInputRef.current.value = "";
+        passwordInputRef.current.value = "";
+        notify("error", "Your email or password is incorrect!");
+      }
+      
 
     } else {
       try {
@@ -83,7 +89,11 @@ function AuthForm() {
           //set some auth state
           notify("success", "You may now sign in!");
         }
-        notify("error", "Your email is already registered");
+        if (result.error) {
+          //set some auth state
+          notify("error", "Your email is already registered");
+        }
+        
 
       } catch (error) {
         console.log(error);
