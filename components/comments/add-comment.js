@@ -3,9 +3,9 @@ import classes from './add-comment.module.css'
 import toast from "../ui/toast";
 import "react-toastify/dist/ReactToastify.css";
 import Backdrop from '../modals/backdrop';
+import { useRouter } from 'next/router';
 
 async function sendCommentData(commentDetails) {
-    console.log("Sending Comment");
     
     const response = await fetch('/api/comment', {
         method: 'POST',
@@ -22,11 +22,12 @@ async function sendCommentData(commentDetails) {
     }
 }
 
-function AddComment() {
+function AddComment(props) {
     const [isLoading, setIsLoading] = useState(false);
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredName, setEnteredName] = useState('');
     const [enteredContent, setEnteredContent] = useState('');
+    const router = useRouter();
 
     const notify = useCallback((type, message) => {
         toast({ type, message });
@@ -51,6 +52,8 @@ function AddComment() {
             toast.dismiss();
             notify("success", "Success!");
             setIsLoading(false);
+            router.replace('/comment');
+            props.onAddComment();
 
             setEnteredTitle('');
             setEnteredName('');

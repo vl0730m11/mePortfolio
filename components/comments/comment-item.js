@@ -3,7 +3,6 @@ import classes from './comment-item.module.css'
 
 function CommentItem(props){
     const { _id, title, name, content, createdDate } = props.comment;
-    console.log("date: ", createdDate);
 
     const formattedDate = new Date(createdDate).toLocaleDateString('en-US', {
         day: 'numeric',

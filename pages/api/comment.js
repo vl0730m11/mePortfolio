@@ -55,7 +55,7 @@ async function addComment(input, res) {
 
     res
         .status(201)
-        .json({ message: 'Successfully stored comment!', message: newComment });
+        .json({ message: 'Successfully stored comment!', comment: newComment });
 }
 
 async function getAllComments(res) {

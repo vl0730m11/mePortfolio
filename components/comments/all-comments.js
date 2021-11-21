@@ -10,6 +10,10 @@ function AllComments(props) {
         setIsAddComment(!isAddComment);
     }
 
+    function updateComments() {
+        setIsAddComment(false);
+    }
+
     return (
         <section className={classes.comments}>
             <h1>All Comments</h1>
@@ -20,7 +24,7 @@ function AllComments(props) {
                         </button>
                 </div>
             </div>
-            {isAddComment && <AddComment />}
+            {isAddComment && <AddComment onAddComment={updateComments}/>}
             {!isAddComment && <CommentsGrid comments={props.comments} />}
         </section>
     );
