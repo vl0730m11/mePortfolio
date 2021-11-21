@@ -12,8 +12,11 @@ async function handler(req, res) {
         });
 
         try {
+            let content = 'Name: ' + name;
+            content += '\nEmail: ' + email;
+            content += '\nMessage: ' + message;
             const result = await client.sendAsync({
-                text: name + ': ' + message + '<br> <br/> \n /n Email: ' + email,
+                text: content,
                 from: process.env.gmail_username,
                 to: process.env.gmail_username,
                 subject: 'mePortfolio Contact',
