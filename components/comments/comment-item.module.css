@@ -1,8 +1,8 @@
 .comment {
     margin: var(--size-4) auto;
     border-radius: 6px;
-    background-color: var(--color-grey-100);
-    width: 90%;
+    background-color: var(--color-grey-50);
+    width: 100%;
     max-width: 50rem;
     padding: var(--size-4);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -29,7 +29,7 @@
   .container_reply_btn{
     margin-top: 1rem;
     margin-right: 1.5rem;
-    float: right;
+    height: 1rem;
   }
 
   .comment button {
@@ -40,6 +40,10 @@
       color: var(--color-primary-500);
   }
 
+  .reply_btn {
+    float: right;
+  }
+
   .comment button:hover {
     color: var(--color-primary-200);
   }
@@ -47,5 +51,9 @@
   @media (max-width: 768px) {
     .comment {
       width: 100%;
+    }
+
+    .container_reply_btn{
+      margin-right: 0.5rem;
     }
   }

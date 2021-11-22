@@ -1,0 +1,30 @@
+.container {
+    margin: var(--size-4) auto;
+    padding-left: var(--size-6);
+    padding-right: var(--size-4);
+    margin-bottom: 0;
+}
+
+.reply {
+    border-top: 0.05rem solid var(--color-primary-500);
+}
+
+.reply h5 {
+    margin: var(--size-4) auto;
+    margin-bottom: var(--size-2);
+    font-size: var(--size-3);
+    color: var(--color-grey-800);
+  }
+
+  .reply p {
+    color: var(--color-grey-800);
+    font-size: var(--size-4);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+        padding-left: var(--size-3);
+        padding-right: var(--size-2);
+    }
+  }
