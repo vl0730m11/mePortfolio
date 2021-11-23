@@ -15,13 +15,26 @@ async function handler(req, res) {
             let content = 'Name: ' + name;
             content += '\nEmail: ' + email;
             content += '\nMessage: ' + message;
-            const result = await client.sendAsync({
+            const toMe = await client.sendAsync({
                 text: content,
                 from: process.env.gmail_username,
                 to: process.env.gmail_username,
                 subject: 'mePortfolio Contact',
             });
-            console.log("result: ", result);
+            console.log("toMe: ", toMe);
+            content = 'Hi ' + name;
+            content += '\nThank you for visiting mePortfolio';
+            content += '\nI will get back to you shortly';
+            content += '\n\nHave a good day!';
+            content += '\n\nKind regards!';
+
+            const toUser = await client.sendAsync({
+                text: content,
+                from: process.env.gmail_username,
+                to: email,
+                subject: '[mePortfolio] Auto Reply',
+            });
+            console.log("toUser: ", toUser);
         }
         catch (e) {
             res.status(400).end(JSON.stringify({ message: "Cant send email" }))

@@ -55,6 +55,7 @@ async function addReply(input, res) {
     res
         .status(201)
         .json({ message: 'Successfully stored reply!', reply: newReply });
+        return;
 }
 
 async function getAllReplies(res) {
@@ -73,6 +74,7 @@ async function getAllReplies(res) {
     res
         .status(201)
         .json({ message: 'Successfully load comments!', replies: result });
+        return;
 }
 
 export default handler;
