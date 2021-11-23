@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
+    "bson-objectid": "^2.0.1",
     "dummyjs": "^1.1.7",
     "emailjs": "^3.6.0",
     "gray-matter": "^4.0.3",
