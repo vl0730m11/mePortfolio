@@ -26,7 +26,7 @@ async function handler(req, res) {
             content += '\nThank you for visiting mePortfolio';
             content += '\nI will get back to you shortly';
             content += '\n\nHave a good day!';
-            content += '\n\nKind regards!';
+            content += '\n\nKind regards,';
 
             const toUser = await client.sendAsync({
                 text: content,

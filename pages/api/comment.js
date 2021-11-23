@@ -2,6 +2,7 @@ import { connectToDatabase } from '../../lib/db';
 
 //Testttttt
 async function handler(req, res) {
+    console.log("req.body: ", req.body);
     if (req.method === 'POST') {
         const { action } = req.body;
         if (action === 'add') {
