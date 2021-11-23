@@ -71,9 +71,7 @@ export async function getStaticProps() {
                 as: "replies"
             }
     }]).toArray();
-    console.log("Data: ", data);
     let allComments = JSON.parse(JSON.stringify(data));
-    console.log("allComments: ", allComments);
     //const allComments = DUMMY_COMMENTS;
 
     return {

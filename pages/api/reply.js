@@ -23,7 +23,6 @@ async function handler(req, res) {
 }
 
 async function addReply(input, res) {
-    console.log("input: ", input);
     const { action, commentId, name, content, createdDate } = input;
     if (
         !name ||
@@ -54,8 +53,8 @@ async function addReply(input, res) {
     }
 
     res
-        .status(200)
-        .json({ message: 'Successfully stored reply!'});
+        .status(201)
+        .json({ message: 'Successfully stored reply!', reply: newReply });
 }
 
 async function getAllReplies(res) {

@@ -70,7 +70,7 @@ function CommentItem(props) {
     return Math.round(min + Math.random() * (max - min));
   }
 
-  async function onAddReply(input) {
+  function onAddReply(input) {
     try {
       sendReplyData({
         action: "add",
