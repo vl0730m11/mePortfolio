@@ -53,7 +53,6 @@ async function addReply(input, res) {
         client.close();
     }
 
-    console.log("Successfully Add reply");
     res
         .status(200)
         .json({ message: 'Successfully stored reply!'});
@@ -65,11 +64,10 @@ async function getAllReplies(res) {
         const client = await connectToDatabase();
         const db = client.db();
         result = await db.collection('replies').find().toArray();
-        console.log("result: ", result);
         client.close();
     } catch (error) {
         console.log("error: ", error);
-        res.status(422).json({ message: 'Something went wrong!', replies: [] });
+        //res.status(422).json({ message: 'Something went wrong!', replies: [] });
         client.close();
     }
 

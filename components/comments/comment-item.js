@@ -47,12 +47,10 @@ async function sendReplyData(replyDetails) {
 
 function CommentItem(props) {
   const { _id, title, name, content, createdDate, replies } = props.comment;
-  //console.log("props.comment: ", props.comment);
-  console.log("replies: ", replies);
   const [isShownReplies, setIsShownReplies] = useState(false);
   const [sortedReplies, setSortedReplies] = useState(
     replies.sort((replyA, replyB) =>
-      replyA.createdDate > replyB.createdDate ? -1 : 1
+      replyA.createdDate < replyB.createdDate ? -1 : 1
     )
   );
 
@@ -63,7 +61,6 @@ function CommentItem(props) {
   });
 
   function replyHandler() {
-    console.log("_id: ", _id);
     setIsShownReplies(!isShownReplies);
   }
 
@@ -93,7 +90,6 @@ function CommentItem(props) {
       content: input.content,
       createdDate: input.createdDate,
     };
-    console.log("newReply: ", newReply);
 
     const temp = [...sortedReplies];
     temp.push(newReply);
