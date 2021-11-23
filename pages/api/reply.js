@@ -28,7 +28,7 @@ async function addReply(input, res) {
         !name ||
         !name.trim() === '' ||
         !content ||
-        content.trim() === '' 
+        content.trim() === ''
     ) {
         res.status(422).json({ message: 'Invalid input.' });
         return;
@@ -48,13 +48,14 @@ async function addReply(input, res) {
         const result = await db.collection('replies').insertOne(newReply);
         client.close();
     } catch (error) {
-        console.log(error);
+        console.log("error: ", error);
         client.close();
     }
 
     res
         .status(201)
         .json({ message: 'Successfully stored reply!', reply: newReply });
+    return;
 }
 
 async function getAllReplies(res) {
@@ -73,6 +74,7 @@ async function getAllReplies(res) {
     res
         .status(201)
         .json({ message: 'Successfully load comments!', replies: result });
+    return;
 }
 
 export default handler;

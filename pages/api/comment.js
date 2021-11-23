@@ -2,7 +2,6 @@ import { connectToDatabase } from '../../lib/db';
 
 //Testttttt
 async function handler(req, res) {
-    console.log("req.body: ", req.body);
     if (req.method === 'POST') {
         const { action } = req.body;
         if (action === 'add') {
@@ -57,6 +56,7 @@ async function addComment(input, res) {
     res
         .status(201)
         .json({ message: 'Successfully stored comment!', comment: newComment });
+    return;
 }
 
 async function getAllComments(res) {
@@ -69,13 +69,15 @@ async function getAllComments(res) {
         client.close();
     } catch (error) {
         console.log(error);
-        res.status(422).json({ message: 'Something went wrong!', comments: [] });
         client.close();
+        res.status(422).json({ message: 'Something went wrong!', comments: [] });
+        return;
     }
 
     res
         .status(201)
         .json({ message: 'Successfully load comments!', comments: result });
+    return;
 }
 
 export default handler;
