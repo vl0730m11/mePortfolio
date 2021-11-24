@@ -6,6 +6,7 @@ async function handler(req, res) {
         const { action } = req.body;
         if (action === 'add') {
             await addReply(req.body, res);
+            return;
         }
 
     }

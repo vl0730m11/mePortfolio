@@ -6,6 +6,7 @@ async function handler(req, res) {
         const { action } = req.body;
         if (action === 'add') {
             await addComment(req.body, res);
+            return;
         }
 
     }
