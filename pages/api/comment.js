@@ -24,7 +24,7 @@ async function handler(req, res) {
 }
 
 async function addComment(input, res) {
-    const { action, title, name, content, createdDate } = input;
+    const { action, _id, title, name, content, createdDate } = input;
     if (
         !title ||
         !title.trim() === '' ||
@@ -37,7 +37,9 @@ async function addComment(input, res) {
         return;
     }
 
+    var ObjectId = require("bson-objectid");
     const newComment = {
+        _id: ObjectId(_id),
         title,
         name,
         content,

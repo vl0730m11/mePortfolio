@@ -5,14 +5,19 @@ import { useState } from 'react';
 
 function AllComments(props) {
     const [isAddComment, setIsAddComment] = useState(false);
+    const [allComments, setAllComments] = useState(props.comments);
 
     function addCommentHandler() {
         setIsAddComment(!isAddComment);
     }
 
-    function updateComments() {
+    function updateComments(newComment) {
         setIsAddComment(false);
-        console.log("Comments are updated!");
+        newComment.replies = [];
+        const temp = [...allComments];
+        temp.push(newComment);
+        //temp.sort((replyA, replyB) => replyA.createdDate > replyB.createdDate ? -1 : 1);
+        setAllComments(temp);
     }
 
     return (
@@ -26,7 +31,7 @@ function AllComments(props) {
                 </div>
             </div>
             {isAddComment && <AddComment onAddComment={updateComments}/>}
-            {!isAddComment && <CommentsGrid comments={props.comments} />}
+            {!isAddComment && <CommentsGrid comments={allComments} />}
         </section>
     );
 }

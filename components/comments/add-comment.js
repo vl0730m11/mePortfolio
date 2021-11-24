@@ -33,6 +33,12 @@ function AddComment(props) {
         toast({ type, message });
     }, []);
 
+    function getRandomNumber() {
+        const min = 10000;
+        const max = 100000000;
+        return Math.round(min + Math.random() * (max - min));
+      }
+
     async function addCommentHandler(event) {
         event.preventDefault();
         notify("loading", "Submitting Comment, Please wait...");
@@ -40,20 +46,22 @@ function AddComment(props) {
 
         try {
             let localTime = new Date();
-
-            await sendCommentData({
+            let newComment = {
                 action: 'add',
+                _id: getRandomNumber(),
                 title: enteredTitle,
                 name: enteredName,
                 content: enteredContent,
                 createdDate: localTime.toLocaleString(undefined, { timeZone: "Australia/Sydney" })
-            });
+            }
+
+            await sendCommentData(newComment);
 
             toast.dismiss();
             notify("success", "Success!");
             setIsLoading(false);
-            router.replace('/comment');
-            props.onAddComment();
+            //router.replace('/comment');
+            props.onAddComment(newComment);
 
             setEnteredTitle('');
             setEnteredName('');
