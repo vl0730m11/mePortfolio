@@ -37,7 +37,6 @@ async function addComment(input, res) {
         return;
     }
 
-    console.log("_id", _id);
     var ObjectId = require("bson-objectid");
     const newComment = {
         _id: _id,
@@ -46,7 +45,6 @@ async function addComment(input, res) {
         content,
         createdDate,
     };
-    console.log("newComment: ", newComment);
     try {
         const client = await connectToDatabase();
         const db = client.db();

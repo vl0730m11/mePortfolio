@@ -72,7 +72,6 @@ function CommentItem(props) {
 
   function onAddReply(input) {
     try {
-      console.log("comment._id: ", _id);
       sendReplyData({
         action: "add",
         commentId: _id,
