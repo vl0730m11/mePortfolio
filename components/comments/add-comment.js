@@ -33,7 +33,7 @@ function AddComment(props) {
         toast({ type, message });
     }, []);
 
-    function addCommentHandler(event) {
+    async function addCommentHandler(event) {
         event.preventDefault();
         notify("loading", "Submitting Comment, Please wait...");
         setIsLoading(true);
