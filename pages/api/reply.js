@@ -36,13 +36,14 @@ async function addReply(input, res) {
     }
 
     var ObjectId = require("bson-objectid");
+    console.log("commentId: ", commentId);
     const newReply = {
-        commentId: new ObjectId(commentId),
+        commentId: commentId,
         name,
         content,
         createdDate,
     };
-
+    console.log("newReply: ", newReply);
     try {
         const client = await connectToDatabase();
         const db = client.db();

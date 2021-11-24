@@ -34,8 +34,8 @@ function AddComment(props) {
     }, []);
 
     function getRandomNumber() {
-        const min = 10000;
-        const max = 100000000;
+        const min = 1000000000;
+        const max = 10000000000000;
         return Math.round(min + Math.random() * (max - min));
       }
 
