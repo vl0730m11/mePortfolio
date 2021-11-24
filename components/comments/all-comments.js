@@ -12,6 +12,7 @@ function AllComments(props) {
 
     function updateComments() {
         setIsAddComment(false);
+        console.log("Comments are updated!");
     }
 
     return (
