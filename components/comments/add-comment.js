@@ -41,7 +41,7 @@ function AddComment(props) {
         try {
             let localTime = new Date();
 
-            sendCommentData({
+            await sendCommentData({
                 action: 'add',
                 title: enteredTitle,
                 name: enteredName,
