@@ -1,5 +1,6 @@
 import classes from './add-reply.module.css'
 import { useState } from 'react';
+import { format } from "date-fns";
 
 function AddReply(props) {
     const [enteredName, setEnteredName] = useState('');
@@ -20,7 +21,7 @@ function AddReply(props) {
             commentId: 0,
             name: enteredName,
             content: enteredContent,
-            createdDate: localTime.toLocaleString(undefined, { timeZone: "Australia/Sydney" })
+            createdDate: format(localTime, "MM/dd/yyyy, h:mm a")
         }
 
         props.onAddReply(replyData);
