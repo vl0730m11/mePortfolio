@@ -4,6 +4,7 @@ import toast from "../ui/toast";
 import "react-toastify/dist/ReactToastify.css";
 import Backdrop from '../modals/backdrop';
 import { useRouter } from 'next/router';
+import { format } from "date-fns";
 
 async function sendCommentData(commentDetails) {
     
@@ -52,9 +53,9 @@ function AddComment(props) {
                 title: enteredTitle,
                 name: enteredName,
                 content: enteredContent,
-                createdDate: localTime.toLocaleString(undefined, { timeZone: "Australia/Sydney" })
+                createdDate: format(localTime, "MM/dd/yyyy, h:mm a")
             }
-
+            //11/18/2021, 9:16:50 PM
             await sendCommentData(newComment);
 
             toast.dismiss();
