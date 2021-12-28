@@ -11,12 +11,13 @@ async function handler(req, res) {
 
     }
 
-    // if (req.method === 'GET') {
-    //     if (req.query.action === 'getAllComments') {
-    //         await getAllComments(res);
-    //     }
+    if (req.method === 'GET') {
+        if (req.query.action === 'getAllComments') {
+            await getAllComments(res);
+            return;
+        }
 
-    // }
+    }
 
     res.status(422).json({ message: 'Action not found!' });
     return;
@@ -61,25 +62,32 @@ async function addComment(input, res) {
     return;
 }
 
-// async function getAllComments(res) {
-//     let result = [];
-//     try {
-//         const client = await connectToDatabase();
-//         const db = client.db();
-//         result = await db.collection('comments').find().toArray();
-//         console.log("result: ", result);
-//         client.close();
-//     } catch (error) {
-//         console.log(error);
-//         client.close();
-//         res.status(422).json({ message: 'Something went wrong!', comments: [] });
-//         return;
-//     }
+async function getAllComments(res) {
+    let result = [];
+    try {
+        const client = await connectToDatabase();
+        const db = client.db();
+        result = await db.collection('comments').aggregate([{
+            $lookup: {
+                    from: "replies",
+                    localField: "_id",
+                    foreignField: "commentId",
+                    as: "replies"
+                }
+        }]).toArray();
+        //console.log("result: ", result);
+        client.close();
+    } catch (error) {
+        console.log(error);
+        client.close();
+        res.status(422).json({ message: 'Something went wrong!', comments: [] });
+        return;
+    }
 
-//     res
-//         .status(201)
-//         .json({ message: 'Successfully load comments!', comments: result });
-//     return;
-// }
+    res
+        .status(200)
+        .json({ message: 'Successfully load comments!', comments: result });
+    return;
+}
 
 export default handler;
