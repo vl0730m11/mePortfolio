@@ -99,10 +99,8 @@ function CommentItem(props) {
 
   return (
     <div className={classes.comment}>
-      <h2>{title}</h2>
-      <h6>
-        {name} - {formattedDate}
-      </h6>
+      <h4>{title}. {name}</h4>
+      <h6>{formattedDate}</h6>
       <p>{content}</p>
       <div className={classes.container_reply_btn}>
         <button className={classes.reply_btn} onClick={replyHandler}>

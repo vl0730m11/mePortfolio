@@ -9,7 +9,7 @@
     font-size: var(--size-6);
   }
 
-  .comment h2 {
+  .comment h4 {
       margin: 0;
       color: var(--color-primary-200);
   }
