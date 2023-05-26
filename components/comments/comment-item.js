@@ -93,7 +93,6 @@ function CommentItem(props) {
 
     const temp = [...sortedReplies];
     temp.push(newReply);
-    //temp.sort((replyA, replyB) => replyA.createdDate > replyB.createdDate ? -1 : 1);
     setSortedReplies(temp);
   }
 

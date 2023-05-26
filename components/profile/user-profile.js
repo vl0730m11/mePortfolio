@@ -5,24 +5,6 @@ import ProfileForm from './profile-form';
 import classes from './user-profile.module.css';
 
 function UserProfile() {
-  //const [isLoading, setIsLoading] = useState(true);
-  //const [loadedSession, setLoadedSession] = useState();
-  
-  // useEffect(() => {
-  //   getSession().then(session => {
-  //     if (!session) {
-  //       window.location.href = '/';
-  //     } else {
-  //       setIsLoading(false);
-  //     }
-  //     //setLoadedSession(session);
-  //   })
-  // }, []);
-  
-  // if (isLoading) {
-  //   return <p className={classes.profile}>Loading...</p>
-  // }
-
   async function changePasswordHandler(passwordData) {
     const response = await fetch('/api/user/change-password', {
       method: 'PATCH',

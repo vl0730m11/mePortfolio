@@ -16,7 +16,6 @@ function AllComments(props) {
         newComment.replies = [];
         const temp = [...allComments];
         temp.push(newComment);
-        //temp.sort((replyA, replyB) => replyA.createdDate > replyB.createdDate ? -1 : 1);
         setAllComments(temp);
     }
 

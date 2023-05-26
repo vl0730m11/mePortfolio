@@ -4,14 +4,6 @@ import Image from 'next/image';
 
 import classes from './product-content.module.css';
 
-// const DUMMY_POST = {
-//     slug: 'geting-started3',
-//     title: 'Getting Started',
-//     image: 'getting-started-nextjs.png',
-//     date: '2022-02-10',
-//     content: '# This a first post' //Markdown syntax
-// }
-
 //install Markdown: npm install react-markdown
 //npm install gray-matter -> read markdown data
 
@@ -21,16 +13,6 @@ function ProductContent(props) {
   const imagePath = `/images/products/${product.image}`;
 
   const customRenderers = {
-    // img(image) {
-    //     return (
-    //         <Image
-    //             src={`/images/posts/${post.slug}/${image.src}`}
-    //             alt={image.alt}
-    //             width={600}
-    //             height={300}
-    //         />
-    //     );
-    // }
     p(paragraph) {
       const { node } = paragraph;
 
